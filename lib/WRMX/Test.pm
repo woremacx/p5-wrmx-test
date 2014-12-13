@@ -3,6 +3,28 @@ use strict;
 use warnings;
 our $VERSION = '0.01';
 
+sub new {
+    my $class = shift;
+    return bless {}, $class;
+}
+
+sub set {
+    my $self = shift;
+    die unless @_;
+    $self->{val} = shift;
+}
+
+sub get {
+    my $self = shift;
+    $self->{val};
+}
+
+sub add {
+    my $self = shift;
+    die unless @_;
+    $self->{val} += shift;
+}
+
 1;
 __END__
 
